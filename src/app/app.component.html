@@ -1,0 +1,166 @@
+<div class="container">
+  <header class="header">
+    <p class="heading">Gif Search</p>
+    <div class="buttonIn">
+      <input class="input-header" placeholder="What are you looking for?" [(ngModel)]="searchTerm" />
+    <div class="dropdown">
+        <button class="dropbtn" (click)="search('search')">
+          Show All&nbsp;&nbsp;
+          <i class="fa fa-caret-down icon"></i>
+        </button>
+          <a class="dropdown-content" (click)="search('trending')" href="#">Trending</a>
+        </div>
+      <i class="fa fa-search" (click)="search('search')" aria-hidden="true"></i>
+    </div>
+    <p class="search-text">You can search any gif with our search</p>
+    <p class="heading-description">
+      Everything you need for your creative projects. websites, banners,
+      presentations, magazines and advertising.
+    </p>
+  </header>
+
+  <body class="body">
+    <div class="result-panel">
+      <div class="card" *ngFor="let result of giphyService.searchResults$ | async">
+          <img [src]="result.images.fixed_width.url" [alt]="result.title" />
+      </div>
+    </div>
+  </body>
+
+  <footer>
+    <div>
+      <div class="footer-top">
+        <div class="footer-top-left">
+          Sign up and<br />
+          get free content every week.<br/>
+          <input class="input" placeholder="Enter your email..." /><br />
+          <button class="footer-button">Sign Up</button><br />
+        </div>
+        <div class="footer-top-right">
+          <p class="footer-link-head">Browse by categories</p>
+          <div class="list">
+            <div class="list1">
+              
+              <a href="#">Graphics</a><br/>
+              <a href="#">PSDs</a><br/>
+              <a href="#">Icons</a><br/>
+              <a href="#">Templates</a><br/>
+              <a href="#">Themes</a><br/>
+            </div>
+
+            <div class="list1">
+              <a href="#">Addons</a><br/>
+              <a href="#">Fonts</a><br/>
+              <a href="#">Textures</a><br/>
+              <a href="#">Patterns</a><br/>
+              <a href="#">Backgrounds</a><br/>
+            </div>
+
+            <div class="list1">
+              <a href="#">Buttons</a><br/>
+              <a href="#">Forms</a><br/>
+              <a href="#">GUI</a><br/>
+              <a href="#">Navigation</a><br/>
+              <a href="#">UI Kits</a><br/>
+            </div>
+
+            <div class="list1">
+              <a href="#">Infographics</a><br/>
+              <a href="#">Graphs</a><br/>
+              <a href="#">Logos</a><br/>
+              <a href="#">Vectors</a><br/>
+              <a href="#">Business Cards</a><br/>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-top-right-mobile">
+          <p class="footer-link-head">Browse by categories</p>
+          <div class="list">
+            <div class="list1">
+              
+              <a href="#">Graphics</a><br/>
+              <a href="#">PSDs</a><br/>
+              <a href="#">Icons</a><br/>
+              <a href="#">Templates</a><br/>
+              <a href="#">Themes</a><br/>
+            </div>
+
+            <div class="list1">
+              <a href="#">Addons</a><br/>
+              <a href="#">Fonts</a><br/>
+              <a href="#">Textures</a><br/>
+              <a href="#">Patterns</a><br/>
+              <a href="#">Backgrounds</a><br/>
+            </div>
+
+            <div class="list2">
+              <a href="#">Buttons</a><br/>
+              <a href="#">Forms</a><br/>
+              <a href="#">GUI</a><br/>
+              <a href="#">Navigation</a><br/>
+              <a href="#">UI Kits</a><br/>
+            </div>
+
+            <div class="list2">
+              <a href="#">Infographics</a><br/>
+              <a href="#">Graphs</a><br/>
+              <a href="#">Logos</a><br/>
+              <a href="#">Vectors</a><br/>
+              <a href="#">Business Cards</a><br/>
+            </div>
+          </div>
+          <div class="list-mobile">
+            
+            <div class="list3">
+              <a href="#">Buttons</a><br/>
+              <a href="#">Forms</a><br/>
+              <a href="#">GUI</a><br/>
+              <a href="#">Navigation</a><br/>
+              <a href="#">UI Kits</a><br/>
+            </div>
+
+            <div class="list3">
+              <a href="#">Infographics</a><br/>
+              <a href="#">Graphs</a><br/>
+              <a href="#">Logos</a><br/>
+              <a href="#">Vectors</a><br/>
+              <a href="#">Business Cards</a><br/>
+            </div>
+            </div>
+
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-left-mobile">
+          <a href="#">Affiliates /</a>
+          <a href="#"> Contributors /</a>
+          <a href="#"> Press /</a>
+          <a href="#"> Media /</a>
+          <a href="#"> Careers /</a>
+          <a href="#"> About /</a>
+          <a href="#"> Contact</a>            
+          </div>
+          
+        <div class="footer-bottom-right" >
+          <i class="fa fa-facebook " aria-hidden="true"></i>&nbsp;
+          <i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;
+          <i class="fa fa-google-plus"></i>&nbsp;
+          <i class="fa fa-wifi" aria-hidden="true"></i>
+          </div>
+        <div class="footer-bottom-left">
+        <a href="#">Affiliates /</a>
+        <a href="#"> Contributors /</a>
+        <a href="#"> Press Media /</a>
+        <a href="#"> Careers /</a>
+        <a href="#"> About /</a>
+        <a href="#"> Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom-text">
+      Copyright@2018 myCompany All rights reserved
+    </div>
+  </footer>
+</div>
+<router-outlet></router-outlet>
